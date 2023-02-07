@@ -1,12 +1,10 @@
   let myKey = localStorage.getItem('imgKey');
 
-//Получение данных из страницы
 const idPageNum = document.querySelector('.idPageNum');
 const limit = document.querySelector('.limit');
 const requestBtn = document.querySelector('.request');
 const result = document.querySelector('.resultDiv');
 
-//Отображение результата
 function CreateView(piclist) {
 	let toShow = '';
 
@@ -19,7 +17,6 @@ function CreateView(piclist) {
 	result.innerHTML = toShow;
 }
 
-//Функция для возврата fetch
 const useRequest = () => {
 	return fetch(`https://picsum.photos/v2/list?page=${idPageNum.value}&limit=${limit.value}`)
 		.then((response) => {
